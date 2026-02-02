@@ -1,0 +1,163 @@
+
+.profile-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 14px 0;   /* 👈 vertical balance */
+  border-bottom: 1px solid #eee; /* 👈 subtle divider like image */
+}
+
+
+
+
+.profile-page-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.sub-text {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #777;
+   margin-left: 1rem;
+}
+
+
+.profile-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+   margin-left: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.profile-content {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center; /* 👈 vertical centering magic */
+}
+
+/* Avatar wrapper */
+.profile-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+/* Right side container */
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 👈 5 columns */
+  gap: 30px;
+  align-items: center;
+  flex: 1;
+}
+.profile-divider {
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
+
+.profile-info label {
+  font-size: 13px;
+  color: #4f8ef7;
+}
+
+.profile-info p {
+  margin: 4px 0 0;
+}
+
+.active {
+  color: green;
+  font-weight: 500;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.outline-btn {
+  background: #fff;
+  border: 1px solid #4f8ef7;
+  color: #4f8ef7;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #0a618c;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.profile-meta {
+  display: flex;
+  gap: 80px;
+  /* margin-left: 10rem; */
+  
+}
+.profile-meta label {
+  font-size: 13px;
+  color: #4f8ef7;
+}
+
+
+.activity-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+   margin-left: 1rem;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  
+}
+
+.view-link {
+  color: #0a618c;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.success {
+  color: green;
+  font-weight: 500;
+}

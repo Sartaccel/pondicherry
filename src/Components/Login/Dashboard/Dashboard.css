@@ -1,0 +1,223 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+
+/* RIGHT SIDE */
+.right-content {
+  margin-left: 260px;              /* sidebar width */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+
+
+/* MAIN CONTENT */
+.section-title {
+  font-size: 22px;
+  margin: 25px 0 18px;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* CARDS GRID */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* CARD CONTAINER */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #e8ecf2;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+/* LEFT ICON AREA */
+.card-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* RIGHT TEXT AREA */
+.card-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 10px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 2px 0;
+}
+
+.percentage {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.green { color: #16a34a; }
+.red { color: #ef4444; }
+
+/* ICON BACKGROUND COLORS */
+.yellow { background: #fff4d6; color: #f4b400; }
+.blue { background: #e4ecff; color: #4a6cf7; }
+.pink { background: #ffe6ef; color: #ff5fa3; }
+.purple { background: #eee6ff; color: #7a5af8; }
+
+
+/* CHART GRID */
+.charts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+  margin-top: 25px;
+   margin-left: 1rem;
+   margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px #00000010;
+}
+
+.chart-box.large { width: 100%; }
+.chart-box.small { width: 100%; }
+
+.chart-box small{
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+/* STORAGE TEXT */
+.storage-details {
+  text-align: center;
+  margin-top: 12px;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .cards-row { grid-template-columns: repeat(2, 1fr); }
+  .charts-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .cards-row { grid-template-columns: 1fr; }
+}
+.chart-box.large {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.storage-legend {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.blue-dark { background: #033F5C; }
+.blue-light { background: #6DB5FF; }
+.greeen { background: #57C38C; }
+
+
+
+/* SKELETON LOADER */
+.dashboard-skeleton {
+  padding: 20px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+
+.sk-line,
+.sk-card,
+.sk-chart {
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 10px;
+}
+
+.sk-line {
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.w-30 { width: 30%; }
+
+.sk-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.sk-card {
+  width: 23%;
+  height: 120px;
+}
+
+.sk-charts {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.sk-chart {
+  width: 70%;
+  height: 300px;
+}
+
+.sk-chart.small {
+  width: 30%;
+}

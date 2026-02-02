@@ -1,0 +1,153 @@
+/* .push-page {
+  padding: 24px;
+} */
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: #7a7a7a;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.push-page {
+  padding: 32px;
+  max-width: 1100px;
+}
+
+.push-card {
+  margin-top: 24px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* GRID */
+.push-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+
+.full {
+  grid-column: span 2;
+   
+}
+
+/* FORM */
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 110px;
+  resize: none;
+}
+
+/* UPLOAD */
+.upload-input {
+  position: relative;
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-input input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+
+/* SELECT */
+.select-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 220px; /* 🔥 matches image */
+}
+
+
+.select-btn {
+  padding: 11px 14px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-btn.active {
+  border-color: #0b5ed7;
+  background: #eef4ff;
+  color: #0b5ed7;
+}
+/* FIX SIDEBAR OVERLAP – PUSH NOTIFICATION PAGE ONLY */
+ .right-content {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+}
+
+/* BUTTONS */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.cancel-btn {
+  padding: 9px 18px;
+  border-radius: 6px;
+  background: #f3f3f3;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.send-btn {
+  padding: 9px 22px;
+  border-radius: 6px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.select-btn.active {
+  border-color: #0b5ed7;
+  background: #eef4ff;
+  color: #0b5ed7;
+  font-weight: 500;
+}
+

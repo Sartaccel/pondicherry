@@ -1,0 +1,219 @@
+/* MAIN CONTAINER */
+.userdetails-container {
+   padding: 7px 25px;
+}
+
+/* PAGE TITLES */
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.page-subtitle {
+  color: #6f6f6f;
+  margin-bottom: 20px;
+}
+
+.details-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;   /* ✅ vertical alignment */
+  border: 1px solid #e6e8eb;
+}
+
+.user-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* GRID */
+.details-grid {
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;   /* ✅ parallel alignment */
+  gap: 10px;
+}
+
+.row p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.row strong {
+  display: block;
+  font-size: 13px;
+  color: #0073e6;
+  margin-bottom: 2px;
+}
+
+.divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: #e6e8eb;
+  margin: 12px 0;
+}
+
+.active {
+  color: #16b558;
+  font-weight: 600;
+}
+
+
+/* DIVIDER – full width */
+.divider {
+  border-bottom: 1px solid #e6e8eb;
+  margin: 10px 0;
+}
+
+
+/* SECTION: RECENT ACTIVITY + SUMMARY */
+.activity-section {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+/* LEFT BOX - Recent Activity */
+.recent-box,
+.summary-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  border: 1px solid #e6e8eb;
+}
+
+/* Header */
+.box-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.box-header h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.box-header a {
+  font-size: 14px;
+  color: #0073e6;
+  text-decoration: none;
+}
+
+/* TABLES */
+.activity-table,
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activity-table th,
+.summary-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #ececec;
+  background: #fafafa;
+}
+
+.activity-table td,
+.summary-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 14px;
+  color: #333;
+}
+
+.summary-box h3 {
+  margin-bottom: 15px;
+}
+
+/* Small responsive improvement */
+@media (max-width: 992px) {
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .activity-section {
+    flex-direction: column;
+  }
+}
+
+
+/* SKELETON LOADER */
+@keyframes shimmer {
+  0% { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+
+.sk-photo,
+.sk-line,
+.sk-table-row div {
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.3s infinite linear;
+  border-radius: 6px;
+}
+
+.sk-details-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.sk-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.sk-line {
+  height: 14px;
+  margin: 8px 0;
+}
+
+.w-20 { width: 20%; }
+.w-25 { width: 25%; }
+.w-15 { width: 15%; }
+.w-30 { width: 30%; }
+.w-35 { width: 35%; }
+.w-10 { width: 10%; }
+.w-40 { width: 40%; }
+
+.sk-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sk-divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 20px 0;
+}
+
+.sk-table-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.sk-table-row {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0;
+}

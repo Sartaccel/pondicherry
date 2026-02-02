@@ -1,0 +1,90 @@
+/* PAGE WRAPPER */
+.terms-wrapper {
+  background: #f6f7f9;
+  padding: 16px 20px;
+}
+
+/* HEADER */
+.terms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.terms-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.terms-header p {
+  color: #888;
+  margin: 2px 0 0;
+  font-size: 13px;
+}
+
+/* EDIT BUTTON */
+.edit-btn {
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* TERMS BOX */
+.terms-box {
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px 18px;
+  border: 1px solid #ddd;
+
+  /* ✅ KEY FIX — prevents extra space */
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+}
+
+/* VIEW MODE CONTENT */
+.terms-content {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* EDIT MODE TEXTAREA */
+.terms-textarea {
+  width: 100%;
+  min-height: 300px;
+  border: none;
+  resize: vertical;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ACTION BUTTONS */
+.terms-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* BUTTONS */
+.cancel-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.publish-btn {
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
