@@ -1,0 +1,246 @@
+/* REMOVE ALL OVERFLOW GLOBALLY */
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+/* MAIN LAYOUT */
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+ font-family: "Open Sans", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #e6e6e6;
+  padding: 25px 20px;
+}
+
+.sidebar-logo img {
+  width: 90px;
+  display: block;
+  margin: 0 auto 35px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #6c727f;
+  font-size: 15px;
+}
+
+.sidebar-menu li.active {
+  background: #0e3556;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-menu li i {
+  font-size: 20px;
+}
+.sidebar-menu li:hover {
+  background: #e9f2ff;
+  color: #0e3556;
+}
+/* ---------------- SIDEBAR MAIN ---------------- */
+.sidebar {
+  width: 250px;
+  background: #ffffff;
+  height: 100vh;
+  padding: 20px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* ---------------- MENU ---------------- */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  padding: 12px 15px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+.sidebar-menu li i {
+  font-size: 18px;
+}
+
+.sidebar-menu li:hover {
+  background: #eef3ff;
+}
+
+.sidebar-menu .active {
+  background: #dbe7ff;
+  color: #0356d6;
+  font-weight: 600;
+}
+
+/* --------------------------------------
+   SKELETON LOADER
+-------------------------------------- */
+
+@keyframes shimmer {
+  0% { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+
+/* Skeleton shimmer effect */
+.sk-logo,
+.sk-menu {
+  background: linear-gradient(90deg, #eaeaea 25%, #dcdcdc 50%, #eaeaea 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.2s infinite linear;
+  border-radius: 6px;
+}
+
+/* Logo Skeleton */
+.sk-logo {
+  width: 120px;
+  height: 70px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Menu Skeleton */
+.sk-menu {
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.logout-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+  position: relative;
+  right: 10px;
+  top:90px;
+}
+
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #191919;
+    text-decoration: none;
+    padding: 10px;
+    width: 183px;
+    height: 40px;
+    border-radius: 12px;
+    transition: background 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.logout-button:hover {
+    background: rgba(121, 121, 121, 0.2);
+}
+
+
+.logout-button:active {
+    background: #001D33;
+    color: #fff;
+}
+
+
+.logout-button:active .menu-icon {
+    filter: brightness(0) invert(1);
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  width: 360px;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.popup-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-confirm {
+ background: #0563f1;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;          /* full screen height */
+  overflow: hidden;      /* 🔴 stops sidebar scrolling */
+}

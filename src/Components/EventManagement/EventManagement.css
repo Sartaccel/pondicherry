@@ -1,0 +1,339 @@
+/* Layout */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background: #f5f6fa;
+  overflow-y: auto;
+
+  /* ✅ FIX FOR FIXED SIDEBAR */
+  margin-left: 260px;                 /* same as sidebar width */
+  width: calc(100% - 260px);
+  min-height: 100vh;
+}
+
+
+.page-content {
+  padding: 20px;
+}
+
+/* Header */
+.event-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.event-header p {
+  margin-top: 5px;
+  color: #777;
+}
+
+/* Filters */
+.event-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-box {
+  position: relative;
+  width: 260px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 40px 10px 14px; /* ✅ space ONLY on right */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-box i {
+  position: absolute;
+  left: 14rem;                 /* ✅ RIGHT side */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9aa0a6;
+  font-size: 16px;
+  pointer-events: none;
+}
+.time-picker {
+  position: relative;
+}
+
+.time-picker input {
+  padding: 8px 12px 8px 36px; /* space for clock icon */
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: #fff;
+}
+
+.time-picker i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Buttons */
+.filter-btn,
+.reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.filter-btn i {
+  font-size: 16px;
+}
+
+/* Reset */
+.reset-btn {
+  color: #ef4444;
+  font-weight: 500;
+  border-right: none;
+}
+
+/* Filter fields */
+.filter-field {
+  position: relative;
+  border-right: 1px solid #e5e7eb;
+}
+
+.filter-field input,
+.filter-field select {
+  border: none;
+  padding: 10px 36px 10px 34px;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Icons inside */
+.filter-field i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.filter-field .arrow {
+  left: auto;
+  right: 10px;
+  pointer-events: none;
+}
+
+/* Remove border on last item before reset */
+.filter-field:last-of-type {
+  border-right: none;
+}
+
+/* Table */
+.event-table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.event-table th {
+  background: #f9fafb;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.event-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Status */
+.status {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.active {
+  background: #e6f7ee;
+  color: #2ecc71;
+}
+
+.status.expired {
+  background: #fdecea;
+  color: #e74c3c;
+}
+
+.status.upcoming {
+  background: #eaf2ff;
+  color: #3b82f6;
+}
+
+/* Footer */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  color: #666;
+}
+
+.pagination button {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 4px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+/* TABLE BASE */
+.event-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* FIX COLUMN WIDTHS */
+.event-table th:nth-child(1),
+.event-table td:nth-child(1) {
+  width: 210px; /* Event Title */
+}
+
+.event-table th:nth-child(2),
+.event-table td:nth-child(2) {
+  width: 380px; /* Description */
+}
+
+.event-table th:nth-child(3),
+.event-table td:nth-child(3) {
+  width: 150px; /* Date */
+}
+
+/* DESCRIPTION TEXT TRUNCATION */
+/* .event-table td:nth-child(2) {
+  max-width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+/* DESCRIPTION – SHOW FULL TEXT */
+.event-table td:nth-child(2) {
+  max-width: 350px;
+  white-space: normal;      /* allow multi-line */
+  word-break: break-word;   /* break long words */
+  line-height: 1.5;         /* better readability */
+}
+
+
+/* DATE SINGLE LINE */
+.event-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+/* TIME SINGLE LINE */
+.event-table td:nth-child(4),
+.event-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+/* STATUS BADGE */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+.status.active {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+}
+
+.status.upcoming {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.status.expired,
+.status.past {
+  background-color: #fdecea;
+  color: #c62828;
+}
+.event-table th,
+.event-table td {
+  padding: 16px 14px;
+  vertical-align: middle;
+}
+
+.event-table th {
+  padding: 18px 14px;
+  background: #f9fafb;
+}
+
+.event-table {
+  max-height: 540px;
+  overflow-y: auto;
+}
+/* Hide default browser calendar icon */
+.filter-field input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* For Firefox */
+.filter-field input[type="date"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+/* Hide default calendar & clock icons (Chrome, Edge, Safari) */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
+
+/* Firefox */
+input[type="date"],
+input[type="time"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,229 @@
+/* MAIN CONTAINER */
+.users-container {
+   padding: 7px 25px;
+  
+}
+
+/* TITLES */
+.page-title {
+  text-align: left !important; 
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 25px;
+  text-align: left !important; 
+}
+
+/* TOP BAR → SEARCH + FILTERS */
+.user-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  margin-bottom: 20px;
+}
+
+/* SEARCH BOX */
+.search-box {
+  position: relative;
+  width: 320px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+}
+
+.search-box i {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  font-size: 18px;
+  color: #777;
+}
+
+/* FILTERS RIGHT GROUP */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filters select {
+  padding: 10px 18px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  padding: 10px 16px;
+  color: #ff3b3b;
+  border: 1px solid #ff3b3b;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* TABLE WRAPPER */
+.users-table {
+  width: 100%;
+  border-collapse: collapse; 
+  background: #fff;
+  /* border-radius: 12px; */
+  overflow: hidden;
+}
+
+/* HEADER */
+.users-table th {
+  padding: 16px 18px;
+  text-align: left;
+  /* only header row grey */
+  font-size: 15px;
+  font-weight: 600;
+   background: #ffffff; 
+  color: #333;
+}
+
+/* BODY ROWS */
+.users-table td {
+  padding: 16px 18px;
+  text-align: left;
+  background: #ffffff; /* row background MUST be white */
+  font-size: 15px;
+  color: #333;
+  border-bottom: 1px solid #ececec;
+}
+
+/* TABLE ROW */
+.users-table tr {
+  margin: 0;
+  padding: 0;
+}
+
+/* VIEW ICON */
+.table-view-icon {
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* PAGINATION */
+.pagination-box {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.pagination-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination-btn:hover {
+  background: #f1f1f1;
+}
+/* Skeleton shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -300px 0; }
+  100% { background-position: 300px 0; }
+}
+
+.sk-line {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.3s infinite linear;
+}
+
+.w-70 { width: 70%; }
+.w-80 { width: 80%; }
+.w-60 { width: 60%; }
+.w-50 { width: 50%; }
+.w-40 { width: 40%; }
+
+.sk-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.3s infinite linear;
+}
+.figma-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.figma-pagination-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.figma-pagination-arrows button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  cursor: pointer;
+}
+
+.figma-pagination-arrows button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* Eye (view) icon */
+.table-view-icon {
+  color: #1e88e5;          /* Figma-like blue */
+  font-size: 18px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.table-view-icon:hover {
+  color: #0d47a1;          /* Darker blue on hover */
+  transform: scale(1.1);
+}
