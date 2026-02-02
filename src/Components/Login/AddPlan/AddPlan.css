@@ -1,0 +1,80 @@
+.addplan-page {
+  padding: 24px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: #7a7a7a;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.addplan-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* FORM GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* BUTTONS */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cancel-btn {
+  padding: 9px 18px;
+  border-radius: 6px;
+  background: #f3f3f3;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.save-btn {
+  padding: 9px 20px;
+  border-radius: 6px;
+  background: #0b5ed7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

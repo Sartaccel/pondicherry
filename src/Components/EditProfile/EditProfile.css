@@ -1,0 +1,77 @@
+/* OVERLAY */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MODAL CARD */
+.modal-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  width: 500px;
+  max-width: 90%;
+}
+
+/* HEADER */
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* AVATAR */
+.modal-avatar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.upload-btn {
+  background: #eaf4ff;
+  color: #0a618c;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* FORM */
+.modal-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #4f8ef7;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+/* ACTIONS */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}

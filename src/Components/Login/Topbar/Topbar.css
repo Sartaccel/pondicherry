@@ -1,0 +1,75 @@
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  width: 1250px;
+  padding: 2px 15px;
+  /* border-radius: 12px; */
+  box-shadow: 0 2px 8px #00000010;
+   margin-left: -10px;
+}
+
+/* RIGHT SIDE OF TOPBAR */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+}
+
+/* NOTIFICATION BOX */
+.notify-box {
+  width: 42px;
+  height: 42px;
+  background: #fff7e6;   /* light cream shadow like screenshot */
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.notify-box i {
+  font-size: 20px;
+  color: #f4a605;
+}
+
+/* RED DOT INDICATOR */
+.notify-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff3b30;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+}
+
+/* PROFILE SECTION */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.profile-text p {
+  margin: 0;
+  font-size: 12px;
+  color: gray;
+}
