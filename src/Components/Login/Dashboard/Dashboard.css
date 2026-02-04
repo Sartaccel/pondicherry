@@ -11,6 +11,7 @@
   width: calc(100% - 260px);
   min-height: 100vh;
   background: #f5f7fb;
+  overflow-y: auto;
 }
 
 
@@ -101,12 +102,13 @@
 /* CHART GRID */
 .charts-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 2fr;
   gap: 22px;
-  margin-top: 25px;
-   margin-left: 1rem;
-   margin-bottom: 2rem;
-  margin-right: 1rem;
+  margin-top: 20px ;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
+
 }
 
 .chart-box {
@@ -114,15 +116,10 @@
   padding: 22px;
   border-radius: 16px;
   box-shadow: 0 3px 10px #00000010;
+  margin-bottom: 0px;
+
 }
 
-.chart-box.large { width: 100%; }
-.chart-box.small { width: 100%; }
-
-.chart-box small{
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-}
 /* STORAGE TEXT */
 .storage-details {
   text-align: center;

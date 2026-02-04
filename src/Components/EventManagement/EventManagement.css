@@ -37,31 +37,35 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: clamp(6px, 1vw, 12px);
+  overflow-x: auto;
 }
 
 .search-box {
   position: relative;
-  width: 260px;
+  width: clamp(150px, 18vw, 220px);
+  min-width: 150px;
+  flex-shrink: 1;
 }
 
 .search-box input {
   width: 100%;
-  padding: 10px 40px 10px 14px; /* ✅ space ONLY on right */
+  padding: clamp(8px, 0.8vw, 10px) clamp(30px, 3vw, 36px) clamp(8px, 0.8vw, 10px) clamp(10px, 1vw, 12px);
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 14px;
+  font-size: clamp(12px, 1.2vw, 13px);
   outline: none;
 }
 
 .search-box i {
   position: absolute;
-  left: 14rem;                 /* ✅ RIGHT side */
+  right: clamp(8px, 1vw, 10px);
+  left: auto;
   top: 50%;
   transform: translateY(-50%);
   color: #9aa0a6;
-  font-size: 16px;
+  font-size: clamp(14px, 1.4vw, 15px);
   pointer-events: none;
 }
 .time-picker {
@@ -93,6 +97,8 @@
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 /* Buttons */
@@ -100,17 +106,19 @@
 .reset-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
+  gap: clamp(3px, 0.4vw, 5px);
+  padding: clamp(8px, 0.8vw, 10px) clamp(8px, 1vw, 12px);
   border: none;
   background: #fff;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(11px, 1.1vw, 13px);
   border-right: 1px solid #e5e7eb;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .filter-btn i {
-  font-size: 16px;
+  font-size: clamp(13px, 1.3vw, 15px);
 }
 
 /* Reset */
@@ -118,44 +126,64 @@
   color: #ef4444;
   font-weight: 500;
   border-right: none;
+  padding: clamp(8px, 0.8vw, 10px) clamp(6px, 0.8vw, 10px);
 }
 
 /* Filter fields */
 .filter-field {
   position: relative;
   border-right: 1px solid #e5e7eb;
+  flex-shrink: 1;
+  min-width: 0;
+  z-index: 1;
 }
 
 .filter-field input,
 .filter-field select {
   border: none;
-  padding: 10px 36px 10px 34px;
-  font-size: 14px;
+  padding: clamp(8px, 0.8vw, 10px) clamp(4px, 0.4vw, 6px) clamp(8px, 0.8vw, 10px) clamp(22px, 2.2vw, 26px);
+  font-size: clamp(11px, 1.1vw, 13px);
   outline: none;
   appearance: none;
   background: transparent;
   cursor: pointer;
+  white-space: nowrap;
+  min-width: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.filter-field input[type="date"] {
+  width: clamp(95px, 10vw, 115px);
+}
+
+.filter-field input[type="time"] {
+  width: clamp(70px, 8vw, 85px);
+}
+
+.filter-field select {
+  padding-right: clamp(20px, 2vw, 24px);
+  padding-left: clamp(8px, 0.8vw, 10px);
+  width: auto;
+  min-width: 70px;
+  max-width: 100px;
 }
 
 /* Icons inside */
 .filter-field i {
   position: absolute;
-  left: 10px;
+  left: clamp(5px, 0.6vw, 7px);
   top: 50%;
   transform: translateY(-50%);
   color: #6b7280;
-  font-size: 16px;
+  font-size: clamp(13px, 1.3vw, 15px);
+  z-index: 1;
 }
 
 .filter-field .arrow {
   left: auto;
-  right: 10px;
+  right: clamp(8px, 0.8vw, 10px);
   pointer-events: none;
-}
-
-/* Remove border on last item before reset */
-.filter-field:last-of-type {
-  border-right: none;
 }
 
 /* Table */
@@ -175,6 +203,7 @@
   padding: 12px;
   text-align: left;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .event-table td {
@@ -246,19 +275,11 @@
 }
 
 /* DESCRIPTION TEXT TRUNCATION */
-/* .event-table td:nth-child(2) {
+.event-table td:nth-child(2) {
   max-width: 350px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-} */
-
-/* DESCRIPTION – SHOW FULL TEXT */
-.event-table td:nth-child(2) {
-  max-width: 350px;
-  white-space: normal;      /* allow multi-line */
-  word-break: break-word;   /* break long words */
-  line-height: 1.5;         /* better readability */
 }
 
 
@@ -337,3 +358,4 @@ input[type="date"],
 input[type="time"] {
   -moz-appearance: textfield;
 }
+

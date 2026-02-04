@@ -3,35 +3,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0 14px 0;   /* 👈 vertical balance */
-  border-bottom: 1px solid #eee; /* 👈 subtle divider like image */
+  padding: 20px 25px;
+  border-bottom: 1px solid #eee;
 }
-
-
-
 
 .profile-page-header h2 {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
   text-align: left;
-  margin-left: 1rem;
 }
 
 .sub-text {
   margin: 4px 0 0;
   font-size: 13px;
   color: #777;
-   margin-left: 1rem;
 }
-
 
 .profile-card {
   background: #fff;
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-   margin-left: 1rem;
+  padding: 20px 25px;
+  margin: 20px 25px;
 }
 
 .profile-header {
@@ -42,7 +35,8 @@
 .profile-content {
   display: grid;
   grid-template-columns: 140px 1fr;
-  align-items: center; /* 👈 vertical centering magic */
+  align-items: start;
+  gap: 0;
 }
 
 /* Avatar wrapper */
@@ -50,13 +44,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
 }
 
 /* Right side container */
 .profile-details {
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
 
@@ -68,10 +62,9 @@
 
 .profile-info {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 👈 5 columns */
-  gap: 30px;
-  align-items: center;
-  flex: 1;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  align-items: start;
 }
 .profile-divider {
   height: 1px;
@@ -116,22 +109,32 @@
   cursor: pointer;
 }
 .profile-meta {
-  display: flex;
-  gap: 80px;
-  /* margin-left: 10rem; */
-  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
 }
+
+.profile-meta > div {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-meta label {
   font-size: 13px;
   color: #4f8ef7;
+  margin-bottom: 4px;
+}
+
+.profile-meta p {
+  margin: 0;
 }
 
 
 .activity-card {
   background: #fff;
   border-radius: 8px;
-  padding: 20px;
-   margin-left: 1rem;
+  padding: 20px 25px;
+  margin: 20px 25px;
 }
 
 .activity-header {

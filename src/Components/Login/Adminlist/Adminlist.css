@@ -1,6 +1,6 @@
 .adminlist-container {
-  padding: 7px 25px;
- 
+  padding: 15px 15px;
+  text-align: left !important;
 }
 
 .header-row {
@@ -9,14 +9,17 @@
   align-items: center;
 }
 
-.page-title {
-  font-size: 26px;
-  font-weight: 700;
+.page-head {
+  text-align: left !important;
+  font-size: 22px;
+  color: #000;
 }
 
 .page-subtitle {
   color: #777;
   margin-bottom: 20px;
+  font-size: 15px;
+  text-align: left !important;
 }
 
 /* Add Admin Button */
@@ -39,6 +42,7 @@
 .admin-table {
   width: 100%;
   border-collapse: collapse;
+  border-radius: 10px;
   background: white;
 }
 

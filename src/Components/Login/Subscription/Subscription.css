@@ -1,6 +1,6 @@
 .subscription-container {
-  padding: 25px;
- 
+  padding: 15px 15px;
+  text-align: left !important;
 }
 
 .sub-header-row {
@@ -10,12 +10,12 @@
   margin-bottom: 25px;
 }
 
-.page-title {
+.page-head {
   margin: 0;
   font-size: 22px;
 }
 
-.page-subtext {
+.page-subtitle {
   color: #777;
   margin-top: 4px;
 }

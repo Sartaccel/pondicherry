@@ -43,8 +43,8 @@ const SubscriptionList = () => {
           {/* HEADER */}
           <div className="sub-header-row">
             <div>
-              <h2 className="page-title">Subscription Management</h2>
-              <p className="page-subtext">Manage User subscription plans</p>
+              <h2 className="page-head">Subscription Management</h2>
+              <p className="page-subtitle">Manage User subscription plans</p>
             </div>
 
             <button
@@ -81,7 +81,7 @@ const SubscriptionList = () => {
               <tbody>
                 {plans.length === 0 ? (
                   <tr>
-                    <td colSpan="7" style={{ textAlign: "center" }}>
+                    <td colSpan="7" >
                       No subscription plans found
                     </td>
                   </tr>
