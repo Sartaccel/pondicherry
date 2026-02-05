@@ -60,7 +60,7 @@ const Adminlist = () => {
         <div className="adminlist-container">
           <div className="header-row">
             <div>
-              <h2 className="page-title">Admin List</h2>
+              <h2 className="page-head">Admin List</h2>
               <p className="page-subtitle">Manage list and View Admin</p>
             </div>
 

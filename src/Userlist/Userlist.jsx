@@ -74,7 +74,7 @@ const Userlist = () => {
         <Topbar />
 
         <div className="users-container">
-          <h2 className="page-title">Users Management</h2>
+          <h2 className="page-head">Users Management</h2>
           <p className="page-subtitle">Manage list and View user</p>
 
           {/* SEARCH & FILTER */}
