@@ -80,24 +80,33 @@ const Dashboard = () => {
     },
   };
 
-  // =============== STORAGE RADIAL ===============
+  // =============== STORAGE SEMI-CIRCLE ===============
   const storageChart = {
-    series: [75],
+    series: [75, 25],
     options: {
-      chart: { type: "radialBar", toolbar: { show: false } },
+      chart: { type: "donut" },
+      labels: [ "Storage used", "Remaining Storage"],
+      colors: ["#3294e4", "#0bbd2c"],
+      stroke: { width: 0, colors: ["#1a237e"] },
       plotOptions: {
-        radialBar: {
-          startAngle: -120,
-          endAngle: 120,
-          hollow: { size: "60%" },
-          track: { background: "#e9edf7" },
-          dataLabels: {
-            name: { show: false },
-            value: { fontSize: "32px", color: "#333", offsetY: 10 },
-          },
-        },
+        pie: {
+          startAngle: -90,
+          endAngle: 90,
+          offsetY: 10,
+          donut: {
+            size: "80%",
+            labels: {
+              show: false
+            }
+          }
+        }
       },
-      colors: ["#02f85cff"],
+      dataLabels: { enabled: false },
+      legend: { show: false },
+      states: {
+        hover: { filter: { type: "none" } },
+        active: { filter: { type: "none" } }
+      }
     },
   };
 
@@ -107,8 +116,41 @@ const Dashboard = () => {
     options: {
       chart: { type: "donut" },
       labels: ["Free Plan", "Base Plan", "Business Plan"],
-      colors: ["#D8E6FF", "#3C82F6", "#7EB5FF"],
-      legend: { position: "bottom" },
+      colors: ["#008e0c", "#000263", "#b10000"],
+      stroke: { width: 1, colors: ["#000000"] },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "70%",
+            labels: {
+              show: true,
+              name: {
+                show: true,
+                fontSize: "14px",
+                color: "#217dff",
+                offsetY: -10
+              },
+              value: {
+                show: true,
+                fontSize: "42px",
+                fontWeight: 700,
+                color: "#000000",
+                offsetY: 10,
+                
+              },
+              total: {
+                show: true,
+                label: "Total",
+                fontSize: "14px",
+                color: "#888",
+                formatter: function () { return "500"; }
+              }
+            }
+          }
+        }
+      },
+      dataLabels: { enabled: false },
+      legend: { show: false }
     },
   };
 
@@ -253,12 +295,18 @@ const Dashboard = () => {
             <div className="chart-box large">
               <h4>Storage overview</h4>
 
-              <Chart
-                options={storageChart.options}
-                series={storageChart.series}
-                type="radialBar"
-                height={330}
-              />
+              <div className="storage-chart-wrapper">
+                <Chart
+                  options={storageChart.options}
+                  series={storageChart.series}
+                  type="donut"
+                  height={420}
+                />
+                <div className="storage-center-text">
+                  <span className="storage-value">100GB</span>
+                  <span className="storage-label">current storage status</span>
+                </div>
+              </div>
 
               <div className="storage-legend">
                 <span><i className="dot blue-dark"></i> Total storage: 100GB</span>
@@ -273,8 +321,14 @@ const Dashboard = () => {
                 options={subscriptionChart.options}
                 series={subscriptionChart.series}
                 type="donut"
-                height={300}
+                height={250}
               />
+
+              <div className="subscription-legend">
+                <span><i className="dot sub-free"></i> Free Plan: 225</span>
+                <span><i className="dot sub-base"></i> Base Plan: 225</span>
+                <span><i className="dot sub-business"></i> Business Plan: 50</span>
+              </div>
             </div>
           </div>
 
