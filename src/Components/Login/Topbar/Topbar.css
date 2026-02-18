@@ -4,18 +4,12 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 98%;
-  max-width: 98%;
+  width: 100%;
+  max-width: 100%;
   background: #fff;
-
-  padding: 20px;
-  margin:  auto;
-  margin-top: 10px;
-
-  border-radius: 14px;
+  margin-left: 0px;
+  padding: 10px 30px 10px 20px;
   box-shadow: 0 2px 8px #00000010;
-
-  box-sizing: border-box;
 }
 
 /* RIGHT SIDE */
@@ -84,7 +78,6 @@
 @media (max-width: 768px) {
   .topbar {
     padding: 8px 15px;
-    border-radius: 12px;
   }
 
   .topbar-right {
