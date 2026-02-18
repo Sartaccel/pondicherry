@@ -175,38 +175,39 @@ if (formData.profilePhoto) {
             </div>
 
             {/* PASSWORD ROW */}
-            {/* PASSWORD */}
-<div className="formm-group password-wrapper">
-  <label>Password</label>
-  <input
-    type={showPassword ? "text" : "password"}
-    name="password"
-    placeholder="Enter a Secure Password"
-    value={formData.password}
-    onChange={handleChange}
-  />
-  <i
-    className={showPassword ? "ri-eye-line toggle-eye" : "ri-eye-off-line toggle-eye"}
-    onClick={() => setShowPassword(!showPassword)}
-  ></i>
-</div>
+            <div className="formm-row">
+              {/* PASSWORD */}
+              <div className="password-wrapper">
+                <label>Password</label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  placeholder="Enter a Secure Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <i
+                  className={showPassword ? "ri-eye-line toggle-eye" : "ri-eye-off-line toggle-eye"}
+                  onClick={() => setShowPassword(!showPassword)}
+                ></i>
+              </div>
 
-{/* CONFIRM PASSWORD */}
-<div className="formm-group password-wrapper">
-  <label>Confirm Password</label>
-  <input
-    type={showConfirmPassword ? "text" : "password"}
-    name="confirmPassword"
-    placeholder="Re-enter Password"
-    value={formData.confirmPassword}
-    onChange={handleChange}
-  />
-  <i
-    className={showConfirmPassword ? "ri-eye-line toggle-eye" : "ri-eye-off-line toggle-eye"}
-    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-  ></i>
-</div>
-
+              {/* CONFIRM PASSWORD */}
+              <div className="password-wrapper">
+                <label>Confirm Password</label>
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  name="confirmPassword"
+                  placeholder="Re-enter Password"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                />
+                <i
+                  className={showConfirmPassword ? "ri-eye-line toggle-eye" : "ri-eye-off-line toggle-eye"}
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                ></i>
+              </div>
+            </div>
 
             {/* CHECKBOX */}
             <div className="checkbox-row">

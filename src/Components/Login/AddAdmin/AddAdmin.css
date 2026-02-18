@@ -40,9 +40,10 @@
 }
 .formm-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 25px;
   margin-bottom: 25px;
+  max-width: 66%;
 }
 /* --------------------------
    FORM GROUP
@@ -53,8 +54,8 @@
 }
 
 .form-group label {
-  font-size: 14px;
-  color: #3a3f45;
+  font-size: 14px !important;
+  color: #000000 !important;
   margin-bottom: 6px;
   font-weight: 600;
   text-align: left;
@@ -82,58 +83,52 @@
 --------------------------- */
 .password-wrapper {
   position: relative;
-}
-
-.password-wrapper input {
-  width: 66%;
-  padding-right: 40px;  /* space for the eye icon */
-}
-
-.toggle-eye {
-  position: absolute;
-margin-left: 36rem;
-  top: 36px; /* adjust if needed */
-  font-size: 20px;
-  cursor: pointer;
-  color: #777;
-}
-
-
-.formm-group {
   display: flex;
   flex-direction: column;
 }
 
-.formm-group label {
+.password-wrapper label {
   font-size: 14px;
-  color: #3a3f45;
+  color: #000000 !important;
   margin-bottom: 6px;
   font-weight: 600;
   text-align: left;
 }
 
-.formm-group input[type="text"],
-.formm-group input[type="email"],
-.formm-group input[type="password"] {
-  width: 66%;
-  padding: 12px;
+.password-wrapper input {
+  width: 100%;
+  padding: 12px 40px 12px 12px;  /* space for the eye icon on right */
   border-radius: 8px;
   border: 1px solid #d3d6da;
   background: #f9fafb;
   font-size: 14px;
 }
 
-.formm-group input:focus {
+.password-wrapper input:focus {
   outline: none;
   border-color: #0073e6;
   background: #ffffff;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 38px; /* adjust based on label height */
+  font-size: 20px;
+  cursor: pointer;
+  color: #777;
+  user-select: none;
+}
+
+.toggle-eye:hover {
+  color: #333;
 }
 /* --------------------------
    UPLOAD BOX
 --------------------------- */
 .upload-box {
   border: 1px dashed #bfc3c9;
-  padding: 12px;
+  padding: 9px;
   border-radius: 8px;
   background: #f9fafb;
   text-align: center;

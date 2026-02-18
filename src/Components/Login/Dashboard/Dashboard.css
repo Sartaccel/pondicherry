@@ -102,22 +102,30 @@
 /* CHART GRID */
 .charts-row {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 22px;
   margin-top: 20px ;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 25px;
-
+  margin-bottom: 10px;
+  align-items: stretch;
 }
 
 .chart-box {
   background: #fff;
-  padding: 22px;
+  padding: 4px 18px 18px;
   border-radius: 16px;
   box-shadow: 0 3px 10px #00000010;
   margin-bottom: 0px;
+  overflow: hidden;
+}
 
+.chart-box.small {
+  padding-top: 4px;
+}
+
+.chart-box.small h4 {
+  margin-bottom: 3px;
 }
 
 /* STORAGE TEXT */
@@ -140,7 +148,7 @@
 }
 .chart-box.large {
   background: #fff;
-  padding: 25px;
+  padding-top: 4px;
   border-radius: 16px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   text-align: center;
@@ -150,7 +158,36 @@
   margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.storage-chart-wrapper {
+  position: relative;
+  margin-bottom: -190px;
+}
+
+.storage-center-text {
+  position: absolute;
+  bottom: 53%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.storage-value {
+  font-size: 56px;
+  font-weight: 700;
+  color: #333;
+}
+
+.storage-label {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 400;
 }
 
 .dot {
@@ -161,11 +198,90 @@
   margin-right: 5px;
 }
 
-.blue-dark { background: #033F5C; }
-.blue-light { background: #6DB5FF; }
-.greeen { background: #57C38C; }
+.blue-dark { background: #1a237e; }
+.blue-light { background: #64B5F6; }
+.greeen { background: #4CAF50; }
+
+.subscription-legend {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  color: #000000;
+}
+
+.sub-free { background: #47C47A; }
+.sub-base { background: #64B5F6; }
+.sub-business { background: #1B1464; }
 
 
+/* ======= STORAGE GAUGE ======= */
+.storage-card {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.storage-card h4 {
+  margin-bottom: 2px;
+  align-self: flex-start;
+}
+
+.gauge {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto 0;
+}
+
+.gauge svg {
+  width: 100%;
+  display: block;
+}
+
+.gauge .center {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.gauge .center h1 {
+  font-size: 75px;
+  font-weight: 700;
+  color: #1B1464;
+  margin: 0;
+  line-height: 1;
+}
+
+.gauge .center p {
+  font-size: 18px;
+  color: #888;
+  margin: 6px 0 0;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #000000;
+}
+
+.legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.legend .dot.total { background: #e5e7eb; }
+.legend .dot.used  { background: #1B1464; }
+.legend .dot.remain { background: #47C47A; }
 
 /* SKELETON LOADER */
 .dashboard-skeleton {

@@ -80,26 +80,41 @@ const Dashboard = () => {
     },
   };
 
-  // =============== STORAGE RADIAL ===============
+  // =============== STORAGE SEMI-CIRCLE ===============
   const storageChart = {
-    series: [75],
+    series: [75, 25],
     options: {
-      chart: { type: "radialBar", toolbar: { show: false } },
+      chart: { type: "donut" },
+      labels: [ "Storage used", "Remaining Storage"],
+      colors: ["#3294e4", "#0bbd2c"],
+      stroke: { width: 0, colors: ["#1a237e"] },
       plotOptions: {
-        radialBar: {
-          startAngle: -120,
-          endAngle: 120,
-          hollow: { size: "60%" },
-          track: { background: "#e9edf7" },
-          dataLabels: {
-            name: { show: false },
-            value: { fontSize: "32px", color: "#333", offsetY: 10 },
-          },
-        },
+        pie: {
+          startAngle: -90,
+          endAngle: 90,
+          offsetY: 10,
+          donut: {
+            size: "80%",
+            labels: {
+              show: false
+            }
+          }
+        }
       },
-      colors: ["#02f85cff"],
+      dataLabels: { enabled: false },
+      legend: { show: false },
+      states: {
+        hover: { filter: { type: "none" } },
+        active: { filter: { type: "none" } }
+      }
     },
   };
+
+  // =============== STORAGE GAUGE VARIABLES ===============
+  const stroke = 14;
+  const circumference = Math.PI * 90; // ≈ 282.74
+  const usedLength = (75 / 100) * circumference;
+  const remainLength = (25 / 100) * circumference;
 
   // =============== SUBSCRIPTION DONUT ===============
   const subscriptionChart = {
@@ -107,8 +122,41 @@ const Dashboard = () => {
     options: {
       chart: { type: "donut" },
       labels: ["Free Plan", "Base Plan", "Business Plan"],
-      colors: ["#D8E6FF", "#3C82F6", "#7EB5FF"],
-      legend: { position: "bottom" },
+      colors: ["#47C47A", "#64B5F6", "#1B1464"],
+      stroke: { width: 1, colors: ["#ffffff"] },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: "70%",
+            labels: {
+              show: true,
+              name: {
+                show: true,
+                fontSize: "14px",
+                color: "#217dff",
+                offsetY: -10
+              },
+              value: {
+                show: true,
+                fontSize: "42px",
+                fontWeight: 700,
+                color: "#000000",
+                offsetY: 10,
+                
+              },
+              total: {
+                show: true,
+                label: "Total",
+                fontSize: "14px",
+                color: "#888",
+                formatter: function () { return "500"; }
+              }
+            }
+          }
+        }
+      },
+      dataLabels: { enabled: false },
+      legend: { show: false }
     },
   };
 
@@ -250,20 +298,54 @@ const Dashboard = () => {
 
           {/* CHART ROW 2 */}
           <div className="charts-row">
-            <div className="chart-box large">
+            <div className="chart-box large storage-card">
               <h4>Storage overview</h4>
 
-              <Chart
-                options={storageChart.options}
-                series={storageChart.series}
-                type="radialBar"
-                height={330}
-              />
+              <div className="gauge">
+                <svg viewBox="15 25 210 115">
+                  {/* dotted ticks */}
+                  <path
+                    d="M30 130 A90 90 0 0 1 210 130"
+                    stroke="#e5e7eb"
+                    strokeWidth="3"
+                    strokeDasharray="2 9"
+                    fill="none"
+                  />
 
-              <div className="storage-legend">
-                <span><i className="dot blue-dark"></i> Total storage: 100GB</span>
-                <span><i className="dot blue-light"></i> Storage used: 75GB</span>
-                <span><i className="dot greeen"></i> Remaining Storage: 25GB</span>
+                  {/* used arc */}
+                  <path
+                    d="M30 130 A90 90 0 0 1 210 130"
+                    stroke="#1B1464"
+                    strokeWidth={stroke}
+                    strokeLinecap="round"
+                    fill="none"
+                    strokeDasharray={`${usedLength} ${circumference}`}
+                  />
+
+                  {/* remaining arc */}
+                  <path
+                    d="M30 130 A90 90 0 0 1 210 130"
+                    stroke="#47C47A"
+                    strokeWidth={stroke}
+                    strokeLinecap="round"
+                    fill="none"
+                    strokeDasharray={`${remainLength} ${circumference}`}
+                    strokeDashoffset={-usedLength}
+                  />
+                </svg>
+
+                {/* center text */}
+                <div className="center">
+                  <h1>75GB</h1>
+                  <p>current storage status</p>
+                </div>
+              </div>
+
+              {/* legend */}
+              <div className="legend">
+                <span><i className="dot total"></i>Total storage : 100GB</span>
+                <span><i className="dot used"></i>Storage used : 75GB</span>
+                <span><i className="dot remain"></i>Remaining : 25GB</span>
               </div>
             </div>
 
@@ -273,8 +355,14 @@ const Dashboard = () => {
                 options={subscriptionChart.options}
                 series={subscriptionChart.series}
                 type="donut"
-                height={300}
+                height={240}
               />
+
+              <div className="subscription-legend">
+                <span><i className="dot sub-free"></i> Free Plan: 225</span>
+                <span><i className="dot sub-base"></i> Base Plan: 225</span>
+                <span><i className="dot sub-business"></i> Business Plan: 50</span>
+              </div>
             </div>
           </div>
 
